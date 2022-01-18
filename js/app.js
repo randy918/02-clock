@@ -9,17 +9,17 @@ const setDate = () => {
 
   const degreeMinutes = now.getMinutes() * 6;
 
-  let degreeHours = now.getHours() * 30 + degreeMinutes / 2;
+  let degreeHours = now.getHours() * 30 + degreeMinutes / 12;
   degreeHours > 360 ? (degreeHours = degreeHours - 360) : degreeHours;
 
   secondHand.style.transform = `rotate(${degreeSeconds + 90}deg)`;
   minuteHand.style.transform = `rotate(${degreeMinutes + 90}deg)`;
 
-  hourHand.style.transform = `rotate(${degreeHours}deg)`;
+  hourHand.style.transform = `rotate(${degreeHours + 90}deg)`;
 
   console.log(degreeSeconds);
   console.log(degreeMinutes);
-  console.log(now.getMinutes());
+  console.log(now.getHours());
   console.log(degreeHours);
 };
 
